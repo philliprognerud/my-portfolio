@@ -8,53 +8,57 @@ head
   script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js")
   script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.4/paper-full.js")
   script(type="text/paperscript" canvas="myCanvas").
-    //paperscript cannot be used in external .js
-    var shapes = [];
-    var i = 0;
-
-    function onKeyDown(event){
-      loop();
-    }
-    
-    function loop(){
-      setTimeout(function(){
-          var randomSize= Math.floor(Math.random() * 40) + 10;
-          var height = view.size.height - 300;
-          var maxPoint = new Point(-40, height);
-          var randomPoint = Point.random() + 0.35;
-          var point = maxPoint * randomPoint;
-          var newShape = new Path.Rectangle(new Point(point), randomSize);
-          newShape.rasterize(300);
-          newShape.strokeColor = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
-          shapes.push(newShape);
-          i++;
-          if(i < 80){
-            loop();
-          }
-        }, 500)
-    };
-
-    function onFrame(event) {
-      for(var i = 0; i < shapes.length; i++){
-        shapes[i].rotate(1);
-        shapes[i].strokeColor.hue += 1;
-        shapes[i].position.x += shapes[i].bounds.width / 40;
-        if(shapes[i].bounds.left > view.size.width){
-          shapes[i].position.x = -shapes[i].bounds.width;
-        }
-      }
-    }
+    //- //paperscript cannot be used in external .js
+    //- var shapes = [];
+    //- var i = 0;
+    //- 
+    //- loop();
+    //- 
+    //- function loop(){
+    //-   setTimeout(function(){
+    //-       //- var randomSize= Math.floor(Math.random() * 20) + 10;
+    //-       var randomX= Math.random() * 300 + 20;
+    //-       var maxPoint = new Point(randomX, 200);
+    //-       var point = maxPoint;
+    //-       var newShape = new Path.Rectangle(new Point(point), 10);
+    //-       newShape.rasterize(1080);
+    //-       //- newShape.strokeColor = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+    //-       newShape.strokeColor = 'white'
+    //-       shapes.push(newShape);
+    //-       i++;
+    //-       if(i < 100){
+    //-         loop();
+    //-       }
+    //-     }, 500)
+    //- };
+    //- 
+    //- function onFrame(event) {
+    //-   for(var i = 0; i < shapes.length; i++){
+    //-     shapes[i].rotate(1);
+    //-     shapes[i].strokeColor.hue += 1;
+    //-     shapes[i].position.y += shapes[i].bounds.height / 10;
+    //-     if(shapes[i].bounds.top > view.size.height){
+    //-       shapes[i].position.y = -shapes[i].bounds.height + 225;
+    //-     }
+    //-   }
+    //- }
     
 body
   .border
   .overlay
     .container(resize='')
-      script(id="some-template" type="text/x-handlebars-template").
-        <h1>
-          {{#users}}
-            {{firstName}} {{lastName}}
-          {{/users}}
-        <h1>
+    script(id="some-template" type="text/x-handlebars-template").
+      <h1>
+        {{#users}}
+          {{firstName}} {{lastName}}
+        {{/users}}
+      </h1>
+    .test(resize='')
+      span(class="typer" id="some-id" data-delay="100" data-delim=":" data-words="apples:and:oranges" data-colors="red,black,orange")
+      span(class="cursor" data-cursorDisplay="_" data-owner="some-id" style="color: white")
+
+
   canvas(id="myCanvas", resize="")
 
+  script(type="text/javascript" src="./assets/js/typer.js")
   script(src="./coffeescripts/js/portfolio.js")
