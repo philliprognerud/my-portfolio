@@ -1,0 +1,21 @@
+//Use compass
+@import "compass/css3";
+
+// Partials
+@import "partials/profilePic";
+@import "partials/variables";
+
+body, html{
+  margin: 0;
+  padding: 0;
+  background: $bg-color;
+  color: $text-color;
+  font-family: $oxygen;
+  letter-spacing: $t-space;
+}
+
+.container {
+  margin: $auto;
+  width: $width-con;
+  margin-top: $height-con;
+}

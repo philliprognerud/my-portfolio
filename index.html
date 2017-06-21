@@ -1,63 +1,22 @@
 
 <head>
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="./scss/css/portfolio.css" type="text/css"/>
+  <title>Phillip R.</title>
+  <link rel="stylesheet" href="./assets/css/main.css" type="text/css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen"/>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.4/paper-full.js"></script>
-  <script type="text/paperscript" canvas="myCanvas">
-    //- //paperscript cannot be used in external .js
-    //- var shapes = [];
-    //- var i = 0;
-    //- 
-    //- loop();
-    //- 
-    //- function loop(){
-    //-   setTimeout(function(){
-    //-       //- var randomSize= Math.floor(Math.random() * 20) + 10;
-    //-       var randomX= Math.random() * 300 + 20;
-    //-       var maxPoint = new Point(randomX, 200);
-    //-       var point = maxPoint;
-    //-       var newShape = new Path.Rectangle(new Point(point), 10);
-    //-       newShape.rasterize(1080);
-    //-       //- newShape.strokeColor = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
-    //-       newShape.strokeColor = 'white'
-    //-       shapes.push(newShape);
-    //-       i++;
-    //-       if(i < 100){
-    //-         loop();
-    //-       }
-    //-     }, 500)
-    //- };
-    //- 
-    //- function onFrame(event) {
-    //-   for(var i = 0; i < shapes.length; i++){
-    //-     shapes[i].rotate(1);
-    //-     shapes[i].strokeColor.hue += 1;
-    //-     shapes[i].position.y += shapes[i].bounds.height / 10;
-    //-     if(shapes[i].bounds.top > view.size.height){
-    //-       shapes[i].position.y = -shapes[i].bounds.height + 225;
-    //-     }
-    //-   }
-    //- }
-    
-  </script>
 </head>
 <body>
-  <div class="border"></div>
-  <div class="overlay">
-    <div resize="" class="container"></div>
-    <script id="some-template" type="text/x-handlebars-template">
-      <h1>
-        {{#users}}
-          {{firstName}} {{lastName}}
-        {{/users}}
-      </h1>
-    </script>
-    <div resize="" class="test"><span id="some-id" data-delay="100" data-delim=":" data-words="apples:and:oranges" data-colors="red,black,orange" class="typer"></span><span data-cursorDisplay="_" data-owner="some-id" style="color: white" class="cursor"></span></div>
+  <div class="container">
+    <div class="profilePic"><img alt="smiley face"/></div>
+    <div class="profileName">
+      <h1>Phillip Rognerud</h1>
+    </div>
+    <div class="about">
+      <p>this is my about section where i talk about myself</p>
+    </div>
+    <div class="links"> <a href="google.com">TETDSSTSTSESE</a></div>
   </div>
-  <canvas id="myCanvas" resize=""></canvas>
-  <script type="text/javascript" src="./assets/js/typer.js"></script>
-  <script src="./coffeescripts/js/portfolio.js"></script>
+  <script type="text/javascript" src="./assets/coffeescripts/js/typer.js"></script>
+  <script src="./assets/coffeescripts/js/portfolio.js"></script>
 </body>
