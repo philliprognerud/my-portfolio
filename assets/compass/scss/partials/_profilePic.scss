@@ -1,0 +1,10 @@
+@import "partials/variables";
+
+.profilePic {
+  display: inline-block;
+  background-image: image-url($profile);
+  background-size: contain;
+  width: image-width($profile) * $profile-scale;
+  height: image-height($profile) * $profile-scale;
+  border-radius: $profile-radius;
+}

@@ -1,16 +1,34 @@
-/* line 8, ../compass/scss/main.scss */
+/* line 3, ../compass/scss/partials/_profilePic.scss */
+.profilePic {
+  display: inline-block;
+  background-image: url('../images/profile-pic.jpg?1498029787');
+  background-size: contain;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+/* line 3, ../compass/scss/partials/_profileName.scss */
+.profileName {
+  display: inline-block;
+  line-height: 0px;
+}
+
+/* line 3, ../compass/scss/main.scss */
 body, html {
   margin: 0;
   padding: 0;
   background: #181818;
   color: white;
   font-family: "Oxygen", sans-serif;
+  font-size: 20px;
   letter-spacing: 1px;
 }
 
-/* line 17, ../compass/scss/main.scss */
+/* line 13, ../compass/scss/main.scss */
 .container {
+  position: relative;
+  top: 30%;
   margin: 0 auto;
   width: 500px;
-  margin-top: 300px;
 }

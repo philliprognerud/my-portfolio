@@ -1,9 +1,4 @@
-//Use compass
-@import "compass/css3";
-
-// Partials
-@import "partials/profilePic";
-@import "partials/variables";
+@import "partials/imports";
 
 body, html{
   margin: 0;
@@ -11,11 +6,13 @@ body, html{
   background: $bg-color;
   color: $text-color;
   font-family: $oxygen;
+  font-size: $t-size;
   letter-spacing: $t-space;
 }
 
 .container {
+  position: relative;
+  top: 30%;
   margin: $auto;
   width: $width-con;
-  margin-top: $height-con;
 }
