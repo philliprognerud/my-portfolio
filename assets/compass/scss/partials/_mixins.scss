@@ -53,6 +53,20 @@
   	}
   }
 
+  @keyframes slideDown-small {
+  	0% {
+  		transform: translateY(-15%);
+      opacity: 0;
+  	}
+  	70% {
+  		transform: translateY(5%);
+  	}
+  	100% {
+      opacity: 1;
+  		transform: translateY(0%);
+  	}
+  }
+
   @-webkit-keyframes slideDown {
   	0% {
   		transform: translateY(-100%);

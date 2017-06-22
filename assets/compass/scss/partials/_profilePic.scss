@@ -25,6 +25,7 @@
   border-radius: $profile-radius;
   border-top: solid 3px black;
   border-bottom: solid 3px;
-  animation: Rotate 2s infinite linear, colorchange-border 5s infinite;
+  animation: Rotate 5s infinite linear,
+              colorchange-border 10s infinite linear alternate;
   box-shadow: 0 0 1px 0px white inset, 0 0 1px 0px white;
 }
