@@ -1,11 +1,12 @@
 @import "partials/variables";
 
 .about {
-  animation: slideDown 1s ease-in-out 1.5s forwards;
+  animation: slideUp 1.25s ease-in-out 1.5s forwards;
   opacity: 0;
   margin: 10px;
   padding-left: 30px;
   padding-right: 20px;
+  padding-top: 10px;
   letter-spacing: 0.1px;
   font-size: 17px;
 

@@ -4,12 +4,14 @@ head
   title Phillip R.
   link(rel="stylesheet" href="./assets/css/main.css" type="text/css")
   link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen")
+  link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css")
   script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js")
   script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js")
     
 body
   .container
     .profilePic
+      .picBorder
     .profileName
       h1 Phillip Rognerud
       h2 Software Engineer
@@ -26,6 +28,18 @@ body
         | , and 
         a(href="google.com") Wordpress
         | .
+      .links
+        ul#limheight
+          li
+            .fa.fa-file-text(aria-hidden="true")  Resume
+          li
+            .fa.fa-envelope(aria-hidden="true")  Email
+          li
+            .fa.fa-github(aria-hidden="true")  GitHub
+          li
+            .fa.fa-linkedin(aria-hidden="true")  LinkedIn
+          li
+            .fa.fa-codepen(aria-hidden="true")  Codepen
   .bottom
     .box
     

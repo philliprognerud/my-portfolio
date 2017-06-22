@@ -5,7 +5,6 @@
   margin: $auto;
   background-image: image-url($profile);
   background-size: contain;
-  filter: drop-shadow(0px 0px 2px $text-color2);
   width: image-width($profile) * $profile-scale;
   height: image-height($profile) * $profile-scale;
   border-radius: $profile-radius;
@@ -13,4 +12,19 @@
   animation: fadeIn 1s ease-in-out 0.25s forwards;
   margin-bottom: 15px;
   background-repeat: no-repeat;
+}
+
+.picBorder {
+  box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  display: block;
+  margin: $auto;
+  width: image-width($profile) * $profile-scale;
+  height: image-height($profile) * $profile-scale;
+  border-radius: $profile-radius;
+  border-top: solid 3px black;
+  border-bottom: solid 3px;
+  animation: Rotate 2s infinite linear, colorchange-border 5s infinite;
+  box-shadow: 0 0 1px 0px white inset, 0 0 1px 0px white;
 }
