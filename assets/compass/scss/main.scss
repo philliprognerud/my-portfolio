@@ -1,18 +1,55 @@
 @import "partials/imports";
-
-body, html{
-  margin: 0;
-  padding: 0;
-  background: $bg-color;
-  color: $text-color;
-  font-family: $oxygen;
-  font-size: $t-size;
-  letter-spacing: $t-space;
+html{
+  height: 100%;
+  body{
+    margin: 0;
+    padding: 0;
+    background: $bg-color;
+    color: $text-color;
+    font-family: $oxygen;
+    font-size: $t-size;
+    letter-spacing: $t-space;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+  }
 }
 
+
 .container {
-  position: relative;
-  top: 30%;
-  margin: $auto;
+  position: fixed;
+  z-index: 0;
+  top: 15%; right: 0; bottom: 0; left: 0;
   width: $width-con;
+  margin: $auto;
+
+  hr {
+    animation: fadeIn 3s ease-in-out;
+    display: inline-block;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 2px solid $text-color2-rgba;
+    filter: drop-shadow(0px 0px 3px $text-color2);
+    width: 100%;
+
+    // animation: colorchange 5s infinite;
+  }
+}
+
+.bottom {
+  display: inline-block;
+  height: 535px;
+  position: relative;
+  width: 100%;
+  top: 95%;
+  background: $text-color2;
+  color: white;
+  z-index: 1;
 }

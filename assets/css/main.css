@@ -1,34 +1,265 @@
 /* line 3, ../compass/scss/partials/_profilePic.scss */
 .profilePic {
-  display: inline-block;
-  background-image: url('../images/profile-pic.jpg?1498029787');
+  display: block;
+  margin: 0 auto;
+  background-image: url('../images/profile-pic.jpg?1498031840');
   background-size: contain;
-  width: 150px;
-  height: 150px;
+  filter: drop-shadow(0px 0px 2px #878787);
+  width: 132px;
+  height: 132px;
   border-radius: 50%;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 0.25s forwards;
+  margin-bottom: 15px;
+  background-repeat: no-repeat;
 }
 
 /* line 3, ../compass/scss/partials/_profileName.scss */
 .profileName {
   display: inline-block;
-  line-height: 0px;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 25px;
+}
+/* line 10, ../compass/scss/partials/_profileName.scss */
+.profileName h1 {
+  animation: slideDown 1.2s ease-in-out .5s forwards;
+  margin: 0;
+  opacity: 0;
+  font-size: 30px;
+}
+/* line 16, ../compass/scss/partials/_profileName.scss */
+.profileName h2 {
+  animation: slideDown 0.75s ease-in-out 1s forwards;
+  color: #878787;
+  margin: 0;
+  padding-top: 10px;
+  font-size: 20px;
+  opacity: 0;
 }
 
-/* line 3, ../compass/scss/main.scss */
-body, html {
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes colorchange {
+  0% {
+    background: #FF8A6B;
+  }
+  25% {
+    background: #FFAE6B;
+  }
+  50% {
+    background: #429E9E;
+  }
+  75% {
+    background: #57CF57;
+  }
+  100% {
+    background: #FF6B6B;
+  }
+}
+@-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */ {
+  0% {
+    background: #FF6B6B;
+  }
+  25% {
+    background: #FFED6B;
+  }
+  50% {
+    background: #4EB97D;
+  }
+  75% {
+    background: #7854B2;
+  }
+  100% {
+    background: #FF8A6B;
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-40%);
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(8%);
+  }
+  55% {
+    opacity: 1;
+  }
+  65% {
+    transform: translateY(-4%);
+  }
+  80% {
+    transform: translateY(2%);
+  }
+  95% {
+    transform: translateY(-2%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(60%);
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(-5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+/* line 4, ../compass/scss/partials/_box.scss */
+.box {
+  margin: 0 auto;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 15%;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* line 22, ../compass/scss/partials/_box.scss */
+.box::after {
+  content: "";
+  border-radius: 5px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* line 37, ../compass/scss/partials/_box.scss */
+.box:hover {
+  -webkit-transform: scale(1.25, 1.25);
+  transform: scale(1.25, 1.25);
+}
+
+/* line 42, ../compass/scss/partials/_box.scss */
+.box:hover::after {
+  opacity: 1;
+}
+
+/* line 3, ../compass/scss/partials/_about.scss */
+.about {
+  animation: slideDown 1s ease-in-out 1.5s forwards;
+  opacity: 0;
+  margin: 10px;
+  padding-left: 30px;
+  padding-right: 20px;
+  letter-spacing: 0.1px;
+  font-size: 17px;
+}
+/* line 12, ../compass/scss/partials/_about.scss */
+.about p {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+/* line 3, ../compass/scss/partials/_bottom.scss */
+.bottom {
+  animation: colorchange 10s infinite linear alternate;
+  display: inline-block;
+}
+
+/* line 2, ../compass/scss/main.scss */
+html {
+  height: 100%;
+}
+/* line 4, ../compass/scss/main.scss */
+html body {
   margin: 0;
   padding: 0;
-  background: #181818;
-  color: white;
+  background: white;
+  color: #000000;
   font-family: "Oxygen", sans-serif;
   font-size: 20px;
   letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+     supported by Chrome and Opera */
 }
 
-/* line 13, ../compass/scss/main.scss */
+/* line 25, ../compass/scss/main.scss */
 .container {
-  position: relative;
-  top: 30%;
-  margin: 0 auto;
+  position: fixed;
+  z-index: 0;
+  top: 15%;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: 500px;
+  margin: 0 auto;
+}
+/* line 32, ../compass/scss/main.scss */
+.container hr {
+  animation: fadeIn 3s ease-in-out;
+  display: inline-block;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 2px solid rgba(62, 62, 143, 0.1);
+  filter: drop-shadow(0px 0px 3px #878787);
+  width: 100%;
+}
+
+/* line 46, ../compass/scss/main.scss */
+.bottom {
+  display: inline-block;
+  height: 535px;
+  position: relative;
+  width: 100%;
+  top: 95%;
+  background: #878787;
+  color: white;
+  z-index: 1;
 }

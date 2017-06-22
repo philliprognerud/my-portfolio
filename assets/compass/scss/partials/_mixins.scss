@@ -1,0 +1,75 @@
+@keyframes fadeIn{
+  0%    {opacity: 0}
+  100%  {opacity: 1}
+}
+
+@keyframes colorchange
+  {
+    0%   {background: #FF8A6B}
+    25%  {background: #FFAE6B}
+    50%  {background: #429E9E}
+    75%  {background: #57CF57}
+    100% {background: #FF6B6B}
+  }
+
+  @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+  {
+    0%   {background: #FF6B6B}
+    25%  {background: #FFED6B}
+    50%  {background: #4EB97D}
+    75%  {background: #7854B2}
+    100% {background: #FF8A6B}
+  }
+
+  @keyframes slideDown {
+  	0% {
+  		transform: translateY(-40%);
+      opacity: 0;
+  	}
+  	70% {
+  		transform: translateY(5%);
+  	}
+  	100% {
+      opacity: 1;
+  		transform: translateY(0%);
+  	}
+  }
+
+  @-webkit-keyframes slideDown {
+  	0% {
+  		transform: translateY(-100%);
+      opacity: 0
+  	}
+  	50% {
+  		transform: translateY(8%);
+  	}
+    55% {
+      opacity: 1;
+    }
+    65%{
+  		transform: translateY(-4%);
+  	}
+  	80%{
+  		transform: translateY(2%);
+  	}
+  	95%{
+  		transform: translateY(-2%);
+  	}
+  	100% {
+  		transform: translateY(0%);
+  	}
+  }
+
+  @keyframes slideUp {
+  	0% {
+  		transform: translateY(60%);
+      opacity: 0;
+  	}
+  	70% {
+  		transform: translateY(-5%);
+  	}
+  	100% {
+      opacity: 1;
+  		transform: translateY(0%);
+  	}
+  }

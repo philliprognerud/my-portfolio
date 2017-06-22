@@ -1,10 +1,16 @@
 @import "partials/variables";
 
 .profilePic {
-  display: inline-block;
+  display: block;
+  margin: $auto;
   background-image: image-url($profile);
   background-size: contain;
+  filter: drop-shadow(0px 0px 2px $text-color2);
   width: image-width($profile) * $profile-scale;
   height: image-height($profile) * $profile-scale;
   border-radius: $profile-radius;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 0.25s forwards;
+  margin-bottom: 15px;
+  background-repeat: no-repeat;
 }

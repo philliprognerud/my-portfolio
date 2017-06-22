@@ -2,5 +2,23 @@
 
 .profileName {
   display: inline-block;
-  line-height: $t-height;
+  text-align: center;
+  width: 100%;
+  margin: $auto;
+  padding-bottom: 25px;
+
+  h1 {
+    animation: slideDown 1.2s ease-in-out .5s forwards;
+    margin: 0;
+    opacity: 0;
+    font-size: 30px;
+  }
+  h2 {
+    animation: slideDown 0.75s ease-in-out 1s forwards;
+    color: $text-color2;
+    margin: 0;
+    padding-top: 10px;
+    font-size: 20px;
+    opacity: 0;
+  }
 }
