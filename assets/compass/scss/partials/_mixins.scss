@@ -3,6 +3,21 @@
   100%  {opacity: 1}
 }
 
+@keyframes fadeIn-color{
+  0%    {background: white}
+  100%  {background: #181818}
+}
+
+@keyframes fadeOut-color{
+  0%    {background: #181818}
+  100%  {background: white}
+}
+
+@keyframes fadeOut{
+  0%    {opacity: 1}
+  100%  {opacity: 0}
+}
+
 @keyframes colorchange
   {
     0%   {background: #FF8A6B}

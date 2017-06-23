@@ -64,3 +64,8 @@ a {
   opacity: 0;
   animation: colorchange 10s infinite linear alternate, slideUp 1.5s ease-in-out 4.5s forwards;
 }
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}

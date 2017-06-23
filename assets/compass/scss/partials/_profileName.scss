@@ -15,11 +15,10 @@
     padding-bottom: 15px;
   }
   .element {
-    animation: colorchange-text 10s infinite linear alternate, slideDown 1.5s ease-in-out forwards;
+    animation: colorchange-text 10s infinite linear alternate;
     margin: 0;
     padding-top: 10px;
     font-size: 15px;
-    opacity: 0;
     text-transform: uppercase;
     font-weight: 700;
   }
@@ -31,9 +30,9 @@
 
 .typed-cursor{
     opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
+    -webkit-animation: blink 0.9s infinite;
+    -moz-animation: blink 0.9s infinite;
+    animation: blink 0.9s infinite;
 }
 @keyframes blink{
     0% { opacity:1; }

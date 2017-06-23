@@ -9,7 +9,7 @@
   height: image-height($profile) * $profile-scale;
   border-radius: $profile-radius;
   opacity: 0;
-  animation: fadeIn 1s ease-in-out 0.25s forwards;
+  animation: slideDown 1s ease-in-out 0.25s forwards;
   margin-bottom: 15px;
   background-repeat: no-repeat;
 }

@@ -45,18 +45,18 @@ body
           li
             .fa.fa-codepen(aria-hidden="true")  Codepen
   .bottom
-    .box
+    .box test
     
   script(src="./assets/coffeescripts/js/portfolio.js")
   script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.7/typed.min.js")
   script.
     document.addEventListener('DOMContentLoaded', function(){
-      setTimeout(function(){
         Typed.new('.element', {
-          strings: ["Software Engineer", "Taco Cannoisseur", "SF Bay Area", "Front End Developer", "\"a really cool guy\""],
-          typeSpeed: 70,
+          strings: ["Software Engineer", "Taco Cannoisseur", "Bay Area Native", "Front End Developer", "\"a really cool guy\""],
+          typeSpeed: 40,
           backDelay: 10000,
-          loop: true
+          backSpeed: 20,
+          loop: true,
+          startDelay: 2000
         });
-      }, 1500);
     });

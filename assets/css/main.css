@@ -8,7 +8,7 @@
   height: 132px;
   border-radius: 50%;
   opacity: 0;
-  animation: fadeIn 1s ease-in-out 0.25s forwards;
+  animation: slideDown 1s ease-in-out 0.25s forwards;
   margin-bottom: 15px;
   background-repeat: no-repeat;
 }
@@ -42,25 +42,24 @@
 }
 /* line 17, ../compass/scss/partials/_profileName.scss */
 .profileName .element {
-  animation: colorchange-text 10s infinite linear alternate, slideDown 1.5s ease-in-out forwards;
+  animation: colorchange-text 10s infinite linear alternate;
   margin: 0;
   padding-top: 10px;
   font-size: 15px;
-  opacity: 0;
   text-transform: uppercase;
   font-weight: 700;
 }
-/* line 27, ../compass/scss/partials/_profileName.scss */
+/* line 26, ../compass/scss/partials/_profileName.scss */
 .profileName .wrapper {
   height: 30px;
 }
 
-/* line 32, ../compass/scss/partials/_profileName.scss */
+/* line 31, ../compass/scss/partials/_profileName.scss */
 .typed-cursor {
   opacity: 1;
-  -webkit-animation: blink 0.7s infinite;
-  -moz-animation: blink 0.7s infinite;
-  animation: blink 0.7s infinite;
+  -webkit-animation: blink 0.9s infinite;
+  -moz-animation: blink 0.9s infinite;
+  animation: blink 0.9s infinite;
 }
 
 @keyframes blink {
@@ -102,6 +101,30 @@
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes fadeIn-color {
+  0% {
+    background: white;
+  }
+  100% {
+    background: #181818;
+  }
+}
+@keyframes fadeOut-color {
+  0% {
+    background: #181818;
+  }
+  100% {
+    background: white;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @keyframes colorchange {
@@ -279,9 +302,10 @@
   border-radius: 5px;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  color: black;
 }
 
-/* line 22, ../compass/scss/partials/_box.scss */
+/* line 23, ../compass/scss/partials/_box.scss */
 .box::after {
   content: "";
   border-radius: 5px;
@@ -297,13 +321,13 @@
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* line 37, ../compass/scss/partials/_box.scss */
+/* line 38, ../compass/scss/partials/_box.scss */
 .box:hover {
   -webkit-transform: scale(1.25, 1.25);
   transform: scale(1.25, 1.25);
 }
 
-/* line 42, ../compass/scss/partials/_box.scss */
+/* line 43, ../compass/scss/partials/_box.scss */
 .box:hover::after {
   opacity: 1;
 }
@@ -338,8 +362,6 @@
 }
 /* line 13, ../compass/scss/partials/_links.scss */
 .links #limheight {
-  position: fixed;
-  float: left;
   padding-left: 0;
   padding-right: 70px;
   height: 100px;
@@ -347,11 +369,11 @@
   -moz-column-count: 3;
   column-count: 3;
 }
-/* line 22, ../compass/scss/partials/_links.scss */
+/* line 20, ../compass/scss/partials/_links.scss */
 .links #limheight li {
   display: inline-block;
 }
-/* line 25, ../compass/scss/partials/_links.scss */
+/* line 23, ../compass/scss/partials/_links.scss */
 .links #limheight li:hover {
   color: hotpink;
   cursor: pointer;
@@ -432,4 +454,10 @@ a:hover {
   z-index: 1;
   opacity: 0;
   animation: colorchange 10s infinite linear alternate, slideUp 1.5s ease-in-out 4.5s forwards;
+}
+
+/* line 68, ../compass/scss/main.scss */
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
 }
