@@ -8,7 +8,7 @@
   height: 132px;
   border-radius: 50%;
   opacity: 0;
-  animation: slideDown 1s ease-in-out 0.25s forwards;
+  animation: slideDown 0.75s ease-in 0.25s forwards;
   margin-bottom: 15px;
   background-repeat: no-repeat;
 }
@@ -103,6 +103,14 @@
     opacity: 1;
   }
 }
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes fadeIn-color {
   0% {
     background: white;
@@ -119,7 +127,15 @@
     background: white;
   }
 }
-@keyframes fadeOut {
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes fadeOut {
   0% {
     opacity: 1;
   }
@@ -217,8 +233,15 @@
     transform: translateY(-40%);
     opacity: 0;
   }
-  70% {
-    transform: translateY(5%);
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@-moz-keyframes slideDown {
+  0% {
+    transform: translateY(-40%);
+    opacity: 0;
   }
   100% {
     opacity: 1;
@@ -238,27 +261,26 @@
     transform: translateY(0%);
   }
 }
-@-webkit-keyframes slideDown {
+@-moz-keyframes slideDown-small {
   0% {
-    transform: translateY(-100%);
+    transform: translateY(-15%);
     opacity: 0;
   }
-  50% {
-    transform: translateY(8%);
-  }
-  55% {
-    opacity: 1;
-  }
-  65% {
-    transform: translateY(-4%);
-  }
-  80% {
-    transform: translateY(2%);
-  }
-  95% {
-    transform: translateY(-2%);
+  70% {
+    transform: translateY(5%);
   }
   100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes slideDown {
+  0% {
+    transform: translateY(-40%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
     transform: translateY(0%);
   }
 }
@@ -275,7 +297,30 @@
     transform: translateY(0%);
   }
 }
+@-moz-keyframes slideUp {
+  0% {
+    transform: translateY(60%);
+    opacity: 0;
+  }
+  80% {
+    transform: translateY(-3%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
 @keyframes Rotate {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+@-moz-keyframes Rotate {
   0% {
     transform: rotate(0deg);
     opacity: 1;
@@ -453,11 +498,44 @@ a:hover {
   color: white;
   z-index: 1;
   opacity: 0;
-  animation: colorchange 10s infinite linear alternate, slideUp 1.5s ease-in-out 4.5s forwards;
 }
 
 /* line 68, ../compass/scss/main.scss */
+.bottom-shadow-black {
+  -webkit-box-shadow: 0px -1px 7px rgba(50, 50, 50, 0.7);
+  -moz-box-shadow: 0px -1px 7px rgba(50, 50, 50, 0.7);
+  box-shadow: 0px -1px 7px rgba(50, 50, 50, 0.7);
+}
+
+/* line 74, ../compass/scss/main.scss */
+.bottom-shadow-white {
+  -webkit-box-shadow: 0px -1px 7px rgba(250, 250, 250, 0.7);
+  -moz-box-shadow: 0px -1px 7px rgba(250, 250, 250, 0.7);
+  box-shadow: 0px -1px 7px rgba(250, 250, 250, 0.7);
+}
+
+/* line 80, ../compass/scss/main.scss */
+.bottom-animation, .bottom {
+  animation: colorchange 10s infinite linear alternate, slideUp 1.5s ease-in-out 4.5s forwards;
+}
+
+/* line 84, ../compass/scss/main.scss */
+.bottom-reanimation {
+  animation: colorchange 10s infinite linear alternate;
+}
+
+/* line 88, ../compass/scss/main.scss */
 .stop-scrolling {
   height: 100%;
   overflow: hidden;
+}
+
+/* line 93, ../compass/scss/main.scss */
+.bottom-fadeOut {
+  animation: fadeOut-color 0.4s ease-in-out forwards;
+}
+
+/* line 97, ../compass/scss/main.scss */
+.bottom-fadeIn {
+  animation: fadeIn-color 0.4s ease-in-out forwards;
 }

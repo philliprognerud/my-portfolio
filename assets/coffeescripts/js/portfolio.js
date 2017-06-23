@@ -6,36 +6,24 @@
     }, 100);
   });
 
+  $("body").css({"animation": "fadeOut-color 0.4s ease-in-out forwards" });
+  $(".container").css({"color":"black"});
+
   $("body").addClass("stop-scrolling");
   setTimeout(function(){
     $("body").removeClass("stop-scrolling");
   },5800);
 
-  var hidden = false;
-  var bottom = false;
+  var fromBottom = false;
   window.onscroll = function(e) {
     //IMPORTANT REMEMBER THIS FUNCTION !!~~~~
     var offset = document.querySelector(".bottom").getBoundingClientRect().top;
-    if(offset < 420){
-      $("body").css({"animation": "fadeIn-color 0.4s ease-in-out forwards"});
-      $(".container").css({"color":"white"});
-      bottom = true;
-    } else if(offset < 450 && bottom){
-      $("body").css({"animation": "fadeOut-color 0.4s ease-in-out forwards" });
-      $(".container").css({"color":"black"});
-      bottom = false;
-    } else if(offset < 500){
-      $(".about").css({"animation": "fadeOut 0.4s ease-in-out forwards"});
+    if(offset < 600){
       $("hr").css({"animation": "fadeOut 0.4s ease-in-out forwards"});
-      $("body").css({"animation": "fadeOut-color 0.4s ease-in-out forwards" });
-      $(".container").css({"color":"black"});
-      hidden = true;
-    } else if(hidden) {
-      $(".about").css({"animation": "fadeIn 0.4s ease-in-out forwards"});
-      $("hr").css({"animation": "fadeIn 0.4s ease-in-out forwards"});
-      $("body").css({"animation": "fadeOut-color 0.4s ease-in-out forwards" });
-      $(".container").css({"color":"black"});
-      hidden = false;
+      fromBottom = true;
+    } else if(fromBottom){
+      $("hr").css({"animation": "fadeIn 0.4s ease-in-out forwards"});;
+      fromBottom = false;
     }
   };
 
