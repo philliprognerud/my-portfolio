@@ -6,10 +6,4 @@
     }, 100);
   });
 
-  $(window).resize(function() {
-    //fix bottom to adjust correctly to window height...
-    var bottomOffset = $(".bottom").offset().top - $(".profilePic").height() - $(".profileName").height() - ($(".bottom").offset().top * 0.05) - 85;
-    $(".bottom").css({"height": bottomOffset});
-  });
-
 }).call(this);
