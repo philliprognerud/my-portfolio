@@ -14,7 +14,8 @@ body
       .picBorder
     .profileName
       h1 Phillip Rognerud
-      h2 Software Engineer
+      .wrapper
+        span.element
     hr
     .about
       p 
@@ -46,5 +47,16 @@ body
   .bottom
     .box
     
-  script(type="text/javascript" src="./assets/coffeescripts/js/typer.js")
   script(src="./assets/coffeescripts/js/portfolio.js")
+  script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.7/typed.min.js")
+  script.
+    document.addEventListener('DOMContentLoaded', function(){
+      setTimeout(function(){
+        Typed.new('.element', {
+          strings: ["Software Engineer", "Taco Cannoisseur", "SF Bay Area", "Front End Developer", "\"a really cool guy\""],
+          typeSpeed: 120,
+          backDelay: 7000,
+          loop: true
+        });
+      }, 3500);
+    });

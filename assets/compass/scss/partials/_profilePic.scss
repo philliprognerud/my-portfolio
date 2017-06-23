@@ -15,17 +15,11 @@
 }
 
 .picBorder {
-  box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
   display: block;
   margin: $auto;
   width: image-width($profile) * $profile-scale;
   height: image-height($profile) * $profile-scale;
   border-radius: $profile-radius;
-  border-top: solid 3px black;
-  border-bottom: solid 3px;
-  animation: Rotate 5s infinite linear,
-              colorchange-border 10s infinite linear alternate;
-  box-shadow: 0 0 1px 0px white inset, 0 0 1px 0px white;
+  box-shadow: 0px 0px 10px;
+  animation: colorchange-shadow 10s infinite linear alternate;
 }
