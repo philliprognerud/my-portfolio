@@ -34,7 +34,7 @@
 }
 /* line 10, ../compass/scss/partials/_profileName.scss */
 .profileName h1 {
-  animation: slideDown 1.2s ease-in-out .75s forwards;
+  animation: slideDown 1.2s ease-in-out .7s forwards;
   margin: 0;
   opacity: 0;
   font-size: 30px;
@@ -42,7 +42,7 @@
 }
 /* line 17, ../compass/scss/partials/_profileName.scss */
 .profileName .element {
-  animation: colorchange-text 10s infinite linear alternate, slideDown 1.5s ease-in-out 1.5s forwards;
+  animation: colorchange-text 10s infinite linear alternate, slideDown 1.5s ease-in-out forwards;
   margin: 0;
   padding-top: 10px;
   font-size: 15px;
@@ -310,7 +310,7 @@
 
 /* line 3, ../compass/scss/partials/_about.scss */
 .about {
-  animation: slideDown-small 1.25s ease-in-out 1.5s forwards;
+  animation: slideDown-small 1.25s ease-in-out 4.1s forwards;
   opacity: 0;
   margin: 10px;
   padding-left: 30px;
@@ -407,13 +407,13 @@ a:hover {
 }
 /* line 40, ../compass/scss/main.scss */
 .container hr {
-  animation: fadeIn 3s ease-in-out;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 3.3s forwards;
   display: inline-block;
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
   border-bottom: 2px solid rgba(62, 62, 143, 0.1);
-  filter: drop-shadow(0px 0px 3px #878787);
   width: 100%;
 }
 
@@ -431,5 +431,5 @@ a:hover {
   color: white;
   z-index: 1;
   opacity: 0;
-  animation: colorchange 10s infinite linear alternate, slideUp 1.5s ease-in-out 1.5s forwards;
+  animation: colorchange 10s infinite linear alternate, slideUp 1.5s ease-in-out 4.5s forwards;
 }

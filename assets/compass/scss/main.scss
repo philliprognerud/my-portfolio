@@ -38,13 +38,13 @@ a {
   margin: $auto;
 
   hr {
-    animation: fadeIn 3s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 3.3s forwards;
     display: inline-block;
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
     border-bottom: 2px solid $text-color2-rgba;
-    filter: drop-shadow(0px 0px 3px $text-color2);
     width: 100%;
   }
 }
@@ -62,5 +62,5 @@ a {
   color: white;
   z-index: 1;
   opacity: 0;
-  animation: colorchange 10s infinite linear alternate, slideUp 1.5s ease-in-out 1.5s forwards;
+  animation: colorchange 10s infinite linear alternate, slideUp 1.5s ease-in-out 4.5s forwards;
 }
