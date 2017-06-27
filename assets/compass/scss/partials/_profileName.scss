@@ -2,17 +2,15 @@
 
 .profileName {
   display: inline-block;
-  text-align: center;
-  width: 100%;
-  margin: $auto;
+  padding-top: 35px;
   padding-bottom: 10px;
+  padding-left: 60px;
 
   h1 {
     animation: slideDown 1.2s ease-in-out 1s forwards;
     margin: 0;
     opacity: 0;
     font-size: 30px;
-    padding-bottom: 15px;
   }
   .element {
     animation: colorchange-text 10s infinite linear alternate;

@@ -14,10 +14,18 @@
     $("body").removeClass("stop-scrolling");
   },5800);
 
+  //changes bottom height depending on size of window
+  window.onresize = function(event) {
+    var containerOffset = document.querySelector(".container").getBoundingClientRect().top;
+    var height = window.innerHeight - containerOffset - $(".picBorder").height() - 30;
+    $(".bottom").css({"height": height});
+  };
+
   var fromBottom = false;
   window.onscroll = function(e) {
     //IMPORTANT REMEMBER THIS FUNCTION !!~~~~
     var offset = document.querySelector(".bottom").getBoundingClientRect().top;
+
     if(offset < 600){
       $("hr").css({"animation": "fadeOut 0.4s ease-in-out forwards"});
       fromBottom = true;

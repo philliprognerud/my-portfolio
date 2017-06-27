@@ -1,7 +1,7 @@
 /* line 3, ../compass/scss/partials/_profilePic.scss */
 .profilePic {
-  display: block;
-  margin: 0 auto;
+  display: inline-block;
+  float: left;
   background-image: url('../images/profile-pic.jpg?1498031840');
   background-size: contain;
   width: 132px;
@@ -13,9 +13,8 @@
   background-repeat: no-repeat;
 }
 
-/* line 17, ../compass/scss/partials/_profilePic.scss */
+/* line 18, ../compass/scss/partials/_profilePic.scss */
 .picBorder {
-  display: block;
   margin: 0 auto;
   width: 132px;
   height: 132px;
@@ -27,20 +26,18 @@
 /* line 3, ../compass/scss/partials/_profileName.scss */
 .profileName {
   display: inline-block;
-  text-align: center;
-  width: 100%;
-  margin: 0 auto;
+  padding-top: 35px;
   padding-bottom: 10px;
+  padding-left: 60px;
 }
-/* line 10, ../compass/scss/partials/_profileName.scss */
+/* line 9, ../compass/scss/partials/_profileName.scss */
 .profileName h1 {
   animation: slideDown 1.2s ease-in-out 1s forwards;
   margin: 0;
   opacity: 0;
   font-size: 30px;
-  padding-bottom: 15px;
 }
-/* line 17, ../compass/scss/partials/_profileName.scss */
+/* line 15, ../compass/scss/partials/_profileName.scss */
 .profileName .element {
   animation: colorchange-text 10s infinite linear alternate;
   margin: 0;
@@ -49,12 +46,12 @@
   text-transform: uppercase;
   font-weight: 700;
 }
-/* line 26, ../compass/scss/partials/_profileName.scss */
+/* line 24, ../compass/scss/partials/_profileName.scss */
 .profileName .wrapper {
   height: 30px;
 }
 
-/* line 31, ../compass/scss/partials/_profileName.scss */
+/* line 29, ../compass/scss/partials/_profileName.scss */
 .typed-cursor {
   opacity: 1;
   -webkit-animation: blink 0.9s infinite;
@@ -487,7 +484,7 @@ a:hover {
 /* line 52, ../compass/scss/main.scss */
 .bottom {
   display: inline-block;
-  height: 550px;
+  height: 640px;
   position: relative;
   width: 100%;
   top: 95%;

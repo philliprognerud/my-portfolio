@@ -1,8 +1,9 @@
 @import "partials/variables";
 
 .profilePic {
-  display: block;
-  margin: $auto;
+  display: inline-block;
+  // margin: $auto;
+  float: left;
   background-image: image-url($profile);
   background-size: contain;
   width: image-width($profile) * $profile-scale;
@@ -15,7 +16,6 @@
 }
 
 .picBorder {
-  display: block;
   margin: $auto;
   width: image-width($profile) * $profile-scale;
   height: image-height($profile) * $profile-scale;
