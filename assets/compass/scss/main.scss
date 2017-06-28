@@ -1,6 +1,7 @@
 @import "partials/imports";
 html{
   body{
+    overflow-x: hidden;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -39,7 +40,7 @@ a {
 
   hr {
     opacity: 0;
-    animation: fadeIn 1s ease-in-out 2.5s forwards;
+    animation: fadeIn 0.75s ease-in-out 2.3s forwards;
     display: inline-block;
     border-top: 0px;
     border-left: 0px;
@@ -62,6 +63,7 @@ a {
   color: white;
   z-index: 1;
   opacity: 0;
+  background: #36454f;
   @extend .bottom-animation;
 }
 
@@ -78,7 +80,7 @@ a {
 }
 
 .bottom-animation {
-  animation: colorchange 10s infinite linear alternate, slideUp 1.25s ease-in-out 2.7s forwards;
+  animation: colorchange 15s infinite linear alternate, slideUp 1.25s ease-in-out 2.7s forwards;
 }
 
 .bottom-reanimation {

@@ -6,25 +6,50 @@
     }, 100);
   });
 
+//setting page back to defaults
   $("body").css({"animation": "fadeOut-color 0.4s ease-in-out forwards" });
   $(".container").css({"color":"black"});
 
+//disable scrolling until animations are done
   $("body").addClass("stop-scrolling");
   setTimeout(function(){
     $("body").removeClass("stop-scrolling");
-  },3900);
+  },4100);
 
+//if box clicked then execute animation/css changes
   $(".box").on("click", function(){
-    //add functionality here
+    var boxes = document.querySelectorAll(".box");
+    var parent = this;
+    var clicked = false;
+
+    boxes.forEach(function(box, index){
+      if(parent.innerText === box.innerText){
+        setTimeout(function(){
+          parent.style.cssText= "height:450px;transition: height 0.15s linear;";
+        }, 700);
+
+        if(index === 0){
+          if(window.getComputedStyle(boxes[index+1]).display !== "none"){
+            setTimeout(function(){
+              boxes[index+1].style.cssText = "display:none;";
+              boxes[index+2].style.cssText = "display:none;";
+            }, 1000);
+            boxes[index+1].style.cssText = "animation:slideLeft 0.75s ease-in-out forwards;";
+            boxes[index+2].style.cssText = "animation:slideRight 0.75s ease-in-out forwards;";
+          }
+        }
+      }
+    });
   });
 
-  //dyanmically changes bottom height depending on size of window
+  //dynamically changes bottom height depending on size of window
   window.onresize = function(event) {
     var containerOffset =   document.querySelector(".container").getBoundingClientRect().top;
     var height = window.innerHeight - containerOffset - $(".picBorder").height() - 30;
     $(".bottom").css({"height": height});
   };
 
+  //fades out the body when scrolling up.
   var fromBottom = false;
   window.onscroll = function(e) {
     //IMPORTANT REMEMBER THIS FUNCTION !!~~~~
@@ -32,9 +57,11 @@
 
     if(offset < 600){
       $("hr").css({"animation": "fadeOut 0.4s ease-in-out forwards"});
+      $(".about").css({"animation": "fadeOut 0.4s ease-in-out forwards"});
       fromBottom = true;
     } else if(fromBottom){
-      $("hr").css({"animation": "fadeIn 0.4s ease-in-out forwards"});;
+      $("hr").css({"animation": "fadeIn 0.4s ease-in-out forwards"});
+      $(".about").css({"animation": "fadeIn 0.4s ease-in-out forwards"});
       fromBottom = false;
     }
   };
