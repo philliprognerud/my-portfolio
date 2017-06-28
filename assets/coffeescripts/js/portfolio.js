@@ -12,11 +12,15 @@
   $("body").addClass("stop-scrolling");
   setTimeout(function(){
     $("body").removeClass("stop-scrolling");
-  },5800);
+  },3900);
 
-  //changes bottom height depending on size of window
+  $(".box").on("click", function(){
+    //add functionality here
+  });
+
+  //dyanmically changes bottom height depending on size of window
   window.onresize = function(event) {
-    var containerOffset = document.querySelector(".container").getBoundingClientRect().top;
+    var containerOffset =   document.querySelector(".container").getBoundingClientRect().top;
     var height = window.innerHeight - containerOffset - $(".picBorder").height() - 30;
     $(".bottom").css({"height": height});
   };
