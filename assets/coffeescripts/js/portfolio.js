@@ -16,31 +16,93 @@
     $("body").removeClass("stop-scrolling");
   },4100);
 
+var clickCount = 0;
 //if box clicked then execute animation/css changes
   $(".box").on("click", function(){
     var boxes = document.querySelectorAll(".box");
     var parent = this;
-    var clicked = false;
 
     boxes.forEach(function(box, index){
       if(parent.innerText === box.innerText){
-        setTimeout(function(){
-          parent.style.cssText= "height:450px;transition: height 0.15s linear;";
-        }, 700);
-
-        if(index === 0){
-          if(window.getComputedStyle(boxes[index+1]).display !== "none"){
-            setTimeout(function(){
-              boxes[index+1].style.cssText = "display:none;";
-              boxes[index+2].style.cssText = "display:none;";
-            }, 1000);
-            boxes[index+1].style.cssText = "animation:slideLeft 0.75s ease-in-out forwards;";
-            boxes[index+2].style.cssText = "animation:slideRight 0.75s ease-in-out forwards;";
-          }
+        if(clickCount%2 === 0){
+          setTimeout(function(){
+            parent.style.cssText= "height:450px;transition: height 0.15s linear;";
+            parent.querySelector(".text").style.cssText = "display: inline-block;animation: fadeIn 0.5s linear;";
+            parent.querySelector("span").classList.remove("fa-expand");
+            parent.querySelector("span").classList.add("fa-compress");
+            clickCount += 1;
+          }, 900);
+          slideOut(index, boxes);
+          setTimeout(function(){
+            parent.style.marginTop = "90px";
+          },990);
+        } else {
+          slideIn(index, boxes);
+          parent.style.cssText= "height:90px;transition: height 0.15s linear;";
+          parent.querySelector(".text").style.cssText = "animation: fadeOut 0.5s linear;";
+          parent.querySelector("span").classList.remove("fa-compress");
+          parent.querySelector("span").classList.add("fa-expand");
+          clickCount += 1;
+          // setTimeout(function(){
+          //   if(parent.querySelector("p").innerHTML !== "about me"){
+          //     parent.style.cssText= "margin-top: 0px;";
+          //   }
+          // }, 1500);
         }
       }
     });
   });
+
+  function slideIn(i, boxes) {
+    if(i === 0){
+      boxes[i+1].style.cssText = "display:block;opacity:0";
+      boxes[i+2].style.cssText = "display:block;opacity:0";
+      setTimeout(function(){
+        boxes[i+1].style.cssText = "animation:slideRightIn 0.75s ease-in-out forwards;";
+        boxes[i+2].style.cssText = "animation:slideLeftIn 0.75s ease-in-out forwards;";
+      },100)
+    } else if(i == 1){
+      boxes[i+1].style.cssText = "display:block;opacity:0";
+      boxes[i-1].style.cssText = "display:block;opacity:0";
+      setTimeout(function(){
+        boxes[i+1].style.cssText = "animation:slideRightIn 0.75s ease-in-out forwards;";
+        boxes[i-1].style.cssText = "animation:slideLeftIn 0.75s ease-in-out forwards;";
+      }, 100);
+    } else if(i == 2){
+      boxes[i-2].style.cssText = "display:block;opacity:0";
+      boxes[i-1].style.cssText = "display:block;opacity:0";
+      setTimeout(function(){
+        boxes[i-2].style.cssText = "animation:slideRightIn 0.75s ease-in-out forwards;";
+        boxes[i-1].style.cssText = "animation:slideLeftIn 0.75s ease-in-out forwards;";
+      }, 100);
+    }
+  }
+
+  function slideOut(i, boxes){
+    if(i === 0){
+      setTimeout(function(){
+        boxes[i+1].style.cssText = "display:none;";
+        boxes[i+2].style.cssText = "display:none;";
+      }, 1000);
+      boxes[i+1].style.cssText = "animation:slideLeft 0.75s ease-in-out forwards;";
+      boxes[i+2].style.cssText = "animation:slideRight 0.75s ease-in-out forwards;";
+    } else if(i == 1){
+      setTimeout(function(){
+        boxes[i+1].style.cssText = "display:none;";
+        boxes[i-1].style.cssText = "display:none;";
+      }, 1000);
+      boxes[i+1].style.cssText = "animation:slideLeft 0.75s ease-in-out forwards;";
+      boxes[i-1].style.cssText = "animation:slideRight 0.75s ease-in-out forwards;";
+    } else if(i == 2){
+      setTimeout(function(){
+        boxes[i-2].style.cssText = "display:none;";
+        boxes[i-1].style.cssText = "display:none;";
+      }, 1000);
+      boxes[i-2].style.cssText = "animation:slideLeft 0.75s ease-in-out forwards;";
+      boxes[i-1].style.cssText = "animation:slideRight 0.75s ease-in-out forwards;";
+    }
+
+  }
 
   //dynamically changes bottom height depending on size of window
   window.onresize = function(event) {

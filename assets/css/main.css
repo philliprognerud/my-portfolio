@@ -245,6 +245,26 @@
     transform: translateX(-100%);
   }
 }
+@keyframes slideRightIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes slideLeftIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
 @keyframes slideDown {
   0% {
     transform: translateY(-40%);
@@ -352,7 +372,7 @@
   width: 650px;
   display: block;
   height: 90px;
-  line-height: 100px;
+  line-height: 90px;
   margin: 0 auto;
   margin-bottom: 35px;
   background-color: #fff;
@@ -373,7 +393,7 @@
   line-height: 20px;
 }
 /* line 28, ../compass/scss/partials/_box.scss */
-.box .fa.fa-expand {
+.box .fa {
   float: right;
   margin: 15px;
 }
@@ -389,19 +409,20 @@
   text-align: left;
   text-indent: 50px;
   font-weight: 200;
+  display: none;
 }
 
-/* line 49, ../compass/scss/partials/_box.scss */
+/* line 50, ../compass/scss/partials/_box.scss */
 .box:hover > .fa {
   color: #5AD770;
 }
 
-/* line 53, ../compass/scss/partials/_box.scss */
+/* line 54, ../compass/scss/partials/_box.scss */
 .box:nth-child(1) {
   margin-top: 90px;
 }
 
-/* line 57, ../compass/scss/partials/_box.scss */
+/* line 58, ../compass/scss/partials/_box.scss */
 .gradient1, .bottom {
   background: #70e1f5;
   /* fallback for old browsers */
