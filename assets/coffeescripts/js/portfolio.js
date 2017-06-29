@@ -34,13 +34,13 @@ var clickCount = 0;
     boxes.forEach(function(box, index){
       if(parent.innerText === box.innerText){
         if(clickCount%2 === 0){
+          parent.style.cssText= "height:450px;transition: height 0.2s linear 0.8s;";
           setTimeout(function(){
-            parent.style.cssText= "height:450px;transition: height 0.15s linear;";
-            parent.querySelector(".text").style.cssText = "display: inline-block;animation: fadeIn 0.5s linear;";
+            parent.querySelector(".text").style.cssText = "display: inline-block;animation: fadeIn 0.8s linear;";
             parent.querySelector("span").classList.remove("fa-expand");
             parent.querySelector("span").classList.add("fa-compress");
             clickCount += 1;
-          }, 900);
+          }, 1100);
 
           //if box languages has been clicked
           if(parent.querySelector("p").innerHTML === "Languages"){
@@ -49,8 +49,8 @@ var clickCount = 0;
 
             //delay to fade in unordered list
             setTimeout(function(){
-              parent.querySelector("#progress").style.cssText = "display:table-row;animation: fadeIn 0.5s linear forwards;";
-            }, 1000);
+              parent.querySelector("#progress").style.cssText = "display:table-row;animation: fadeIn 0.8s ease-in-out forwards;";
+            }, 1300);
 
             //delay for progress bar transition effect
             setTimeout(function(){
@@ -59,13 +59,13 @@ var clickCount = 0;
                 var lang = codeLevels[key];
                 progress[index].style.cssText= "width: " + lang + "; transition: width 0.4s linear;";
               });
-            }, 1700);
+            }, 2200);
           }
 
           slideOut(index, boxes);
           setTimeout(function(){
             parent.style.marginTop = "90px";
-          },990);
+          },690);
         } else {
           slideIn(index, boxes);
           parent.style.cssText= "height:90px;transition: height 0.15s linear;";
@@ -73,6 +73,15 @@ var clickCount = 0;
           parent.querySelector("span").classList.remove("fa-compress");
           parent.querySelector("span").classList.add("fa-expand");
           clickCount += 1;
+
+          //reset progress bars to 0% and fade out
+          if(parent.querySelector("p").innerHTML === "Languages"){
+            var progress = parent.querySelectorAll(".meter > span");
+            parent.querySelector("#progress").style.cssText = "display:none;opacity:0;";
+            progress.forEach(function(item){
+              item.style.cssText= "width: 0%;";
+            })
+          }
         }
       }
     });
@@ -112,21 +121,21 @@ var clickCount = 0;
       setTimeout(function(){
         boxes[i+1].style.cssText = "display:none;";
         boxes[i+2].style.cssText = "display:none;";
-      }, 1000);
+      }, 700);
       boxes[i+1].style.cssText = "animation:slideLeft 0.75s ease-in-out forwards;";
       boxes[i+2].style.cssText = "animation:slideRight 0.75s ease-in-out forwards;";
     } else if(i == 1){
       setTimeout(function(){
         boxes[i+1].style.cssText = "display:none;";
         boxes[i-1].style.cssText = "display:none;";
-      }, 1000);
+      }, 700);
       boxes[i+1].style.cssText = "animation:slideLeft 0.75s ease-in-out forwards;";
       boxes[i-1].style.cssText = "animation:slideRight 0.75s ease-in-out forwards;";
     } else if(i == 2){
       setTimeout(function(){
         boxes[i-2].style.cssText = "display:none;";
         boxes[i-1].style.cssText = "display:none;";
-      }, 1000);
+      }, 700);
       boxes[i-2].style.cssText = "animation:slideLeft 0.75s ease-in-out forwards;";
       boxes[i-1].style.cssText = "animation:slideRight 0.75s ease-in-out forwards;";
     }
