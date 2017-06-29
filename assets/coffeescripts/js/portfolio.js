@@ -6,6 +6,15 @@
     }, 100);
   });
 
+  codeLevels = {
+    "Python": "85%",
+    "Javascript": "70%",
+    "Java": "50%",
+    "C": "45%",
+    "PHP": "20%",
+    "HTML+CSS": "90%"
+  }
+
 //setting page back to defaults
   $("body").css({"animation": "fadeOut-color 0.4s ease-in-out forwards" });
   $(".container").css({"color":"black"});
@@ -32,6 +41,27 @@ var clickCount = 0;
             parent.querySelector("span").classList.add("fa-compress");
             clickCount += 1;
           }, 900);
+
+          //if box languages has been clicked
+          if(parent.querySelector("p").innerHTML === "Languages"){
+            var languages = parent.querySelectorAll("#progress li");
+            var progress = parent.querySelectorAll(".meter > span");
+
+            //delay to fade in unordered list
+            setTimeout(function(){
+              parent.querySelector("#progress").style.cssText = "display:table-row;animation: fadeIn 0.5s linear forwards;";
+            }, 1000);
+
+            //delay for progress bar transition effect
+            setTimeout(function(){
+              languages.forEach(function(language, index){
+                var key = language.querySelector(".language").innerHTML;
+                var lang = codeLevels[key];
+                progress[index].style.cssText= "width: " + lang + "; transition: width 0.4s linear;";
+              });
+            }, 1700);
+          }
+
           slideOut(index, boxes);
           setTimeout(function(){
             parent.style.marginTop = "90px";
@@ -43,15 +73,14 @@ var clickCount = 0;
           parent.querySelector("span").classList.remove("fa-compress");
           parent.querySelector("span").classList.add("fa-expand");
           clickCount += 1;
-          // setTimeout(function(){
-          //   if(parent.querySelector("p").innerHTML !== "about me"){
-          //     parent.style.cssText= "margin-top: 0px;";
-          //   }
-          // }, 1500);
         }
       }
     });
   });
+
+  function scrollAboutMe(){
+    console.log(test);
+  }
 
   function slideIn(i, boxes) {
     if(i === 0){
