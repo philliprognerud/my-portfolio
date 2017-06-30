@@ -6,6 +6,7 @@
     }, 100);
   });
   alert("TEST");
+  console.log("TEEEESSSSSSSSSSSTTTT");
   codeLevels = {
     "Python": "85%",
     "Javascript": "70%",
