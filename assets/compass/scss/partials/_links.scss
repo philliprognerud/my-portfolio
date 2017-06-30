@@ -23,16 +23,12 @@
     li {
       display: inline-block;
 
-      a {
-        color: #181818 !important;
-        text-decoration: none;
-        &:hover{
-          color: hotpink;
-        }
-      }
-
       &:hover{
         color: hotpink;
+      }
+
+      a{
+        color: #181818;
       }
     }
 
