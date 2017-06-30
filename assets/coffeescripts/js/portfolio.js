@@ -5,7 +5,7 @@
       scrollTop: 0
     }, 100);
   });
-
+  alert("TEST");
   codeLevels = {
     "Python": "85%",
     "Javascript": "70%",
