@@ -531,6 +531,15 @@ ul#progress li:first-of-type {
   line-height: 1.5;
   font-size: 17px;
 }
+/* line 17, ../compass/scss/partials/_about.scss */
+.about p a {
+  color: hotpink;
+  text-decoration: none;
+}
+/* line 20, ../compass/scss/partials/_about.scss */
+.about p a:hover {
+  border-bottom: 3px solid hotpink;
+}
 
 /* line 4, ../compass/scss/partials/_links.scss */
 .links {
@@ -545,8 +554,9 @@ ul#progress li:first-of-type {
 }
 /* line 13, ../compass/scss/partials/_links.scss */
 .links #limheight {
+  display: table-cell;
   width: 100%;
-  color: #181818;
+  color: #181818 !important;
   padding-left: 0;
   padding-right: 70px;
   height: 100px;
@@ -554,14 +564,22 @@ ul#progress li:first-of-type {
   -moz-column-count: 3;
   column-count: 3;
 }
-/* line 22, ../compass/scss/partials/_links.scss */
+/* line 23, ../compass/scss/partials/_links.scss */
 .links #limheight li {
   display: inline-block;
 }
-/* line 25, ../compass/scss/partials/_links.scss */
+/* line 26, ../compass/scss/partials/_links.scss */
+.links #limheight li a {
+  color: #181818;
+  text-decoration: none;
+}
+/* line 29, ../compass/scss/partials/_links.scss */
+.links #limheight li a:hover {
+  color: hotpink;
+}
+/* line 34, ../compass/scss/partials/_links.scss */
 .links #limheight li:hover {
   color: hotpink;
-  cursor: pointer;
 }
 
 /* line 3, ../compass/scss/main.scss */
@@ -593,16 +611,6 @@ html body {
 }
 
 /* line 25, ../compass/scss/main.scss */
-a {
-  color: hotpink;
-  text-decoration: none;
-}
-/* line 28, ../compass/scss/main.scss */
-a:hover {
-  border-bottom: 3px solid hotpink;
-}
-
-/* line 34, ../compass/scss/main.scss */
 .container {
   position: fixed;
   z-index: 0;
@@ -613,7 +621,7 @@ a:hover {
   width: 500px;
   margin: 0 auto;
 }
-/* line 41, ../compass/scss/main.scss */
+/* line 32, ../compass/scss/main.scss */
 .container hr {
   opacity: 0;
   animation: fadeIn 0.75s ease-in-out 2.3s forwards;
@@ -625,7 +633,7 @@ a:hover {
   width: 100%;
 }
 
-/* line 53, ../compass/scss/main.scss */
+/* line 44, ../compass/scss/main.scss */
 .bottom {
   display: inline-block;
   height: 640px;
@@ -641,42 +649,42 @@ a:hover {
   animation: slideUp 1.25s ease-in-out 2.7s forwards;
 }
 
-/* line 70, ../compass/scss/main.scss */
+/* line 61, ../compass/scss/main.scss */
 .bottom-shadow-black {
   -webkit-box-shadow: 0px -1px 7px rgba(50, 50, 50, 0.7);
   -moz-box-shadow: 0px -1px 7px rgba(50, 50, 50, 0.7);
   box-shadow: 0px -1px 7px rgba(50, 50, 50, 0.7);
 }
 
-/* line 76, ../compass/scss/main.scss */
+/* line 67, ../compass/scss/main.scss */
 .bottom-shadow-white {
   -webkit-box-shadow: 0px -1px 7px rgba(250, 250, 250, 0.7);
   -moz-box-shadow: 0px -1px 7px rgba(250, 250, 250, 0.7);
   box-shadow: 0px -1px 7px rgba(250, 250, 250, 0.7);
 }
 
-/* line 82, ../compass/scss/main.scss */
+/* line 73, ../compass/scss/main.scss */
 .bottom-animation {
   animation: colorchange 15s infinite linear alternate, slideUp 1.25s ease-in-out 2.7s forwards;
 }
 
-/* line 86, ../compass/scss/main.scss */
+/* line 77, ../compass/scss/main.scss */
 .bottom-reanimation {
   animation: colorchange 10s infinite linear alternate;
 }
 
-/* line 90, ../compass/scss/main.scss */
+/* line 81, ../compass/scss/main.scss */
 .stop-scrolling {
   height: 100%;
   overflow: hidden;
 }
 
-/* line 95, ../compass/scss/main.scss */
+/* line 86, ../compass/scss/main.scss */
 .bottom-fadeOut {
   animation: fadeOut-color 0.4s ease-in-out forwards;
 }
 
-/* line 99, ../compass/scss/main.scss */
+/* line 90, ../compass/scss/main.scss */
 .bottom-fadeIn {
   animation: fadeIn-color 0.4s ease-in-out forwards;
 }

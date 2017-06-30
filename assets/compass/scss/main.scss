@@ -22,15 +22,6 @@ html{
   }
 }
 
-a {
-  color: hotpink;
-  text-decoration: none;
-  &:hover{
-    border-bottom: 3px solid hotpink;
-  }
-}
-
-
 .container {
   position: fixed;
   z-index: 0;
