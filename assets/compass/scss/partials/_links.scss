@@ -10,6 +10,10 @@
     padding: 3px;
   }
 
+  a{
+    color: #181818 !important;
+  }
+
   #limheight{
     list-style-type: none;
     display: inherit;
@@ -22,15 +26,13 @@
        -moz-column-count: 3;
             column-count: 3;
     li {
+      float: left;
       display: inline-block;
 
       &:hover{
         color: hotpink;
       }
 
-      a{
-        color: #181818 !important;
-      }
     }
 
   }
