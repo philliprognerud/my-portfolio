@@ -118,31 +118,34 @@ var clickCount = 0;
   //dynamically changes bottom height depending on size of window
   window.onresize = function(event) {
     var containerOffset =   document.querySelector(".container").getBoundingClientRect().top;
-    var height = window.innerHeight - containerOffset - $(".picBorder").height() - 30;
+    var height = window.innerHeight - containerOffset - $(".picBorder").height() - 15;
+
+    //get total height of box elements
     var minHeight = 0
     $(".box").each(function(){
       minHeight += $(this).outerHeight(true);
     });
+
     if(height > minHeight){
       $(".bottom").css({"height": height});
     }
   };
 
   //fades out the body when scrolling up.
-  var fromBottom = false;
-  window.onscroll = function(e) {
-    //IMPORTANT REMEMBER THIS FUNCTION !!~~~~
-    var offset = document.querySelector(".bottom").getBoundingClientRect().top;
-
-    if(offset < 600){
-      $("hr").css({"animation": "fadeOut 0.4s ease-in-out forwards"});
-      $(".about").css({"animation": "fadeOut 0.4s ease-in-out forwards"});
-      fromBottom = true;
-    } else if(fromBottom){
-      $("hr").css({"animation": "fadeIn 0.4s ease-in-out forwards"});
-      $(".about").css({"animation": "fadeIn 0.4s ease-in-out forwards"});
-      fromBottom = false;
-    }
-  };
+  // var fromBottom = false;
+  // window.onscroll = function(e) {
+  //   //IMPORTANT REMEMBER THIS FUNCTION !!~~~~
+  //   var offset = document.querySelector(".bottom").getBoundingClientRect().top;
+  //
+  //   if(offset < 600){
+  //     $("hr").css({"animation": "fadeOut 0.4s ease-in-out forwards"});
+  //     $(".about").css({"animation": "fadeOut 0.4s ease-in-out forwards"});
+  //     fromBottom = true;
+  //   } else if(fromBottom){
+  //     $("hr").css({"animation": "fadeIn 0.4s ease-in-out forwards"});
+  //     $(".about").css({"animation": "fadeIn 0.4s ease-in-out forwards"});
+  //     fromBottom = false;
+  //   }
+  // };
 
 }).call(this);
