@@ -34,7 +34,7 @@ var clickCount = 0;
     boxes.forEach(function(box, index){
       if(parent.innerText === box.innerText){
         if(clickCount%2 === 0){
-          parent.style.cssText= "height:450px;transition: height 0.2s linear 0.8s;";
+          parent.style.cssText= "height:400px;transition: height 0.2s linear 0.8s;";
           setTimeout(function(){
             parent.querySelector(".text").style.cssText = "display: inline-block;animation: fadeIn 0.8s linear;";
             parent.querySelector("span").classList.remove("fa-expand");
@@ -49,7 +49,7 @@ var clickCount = 0;
 
             //delay to fade in unordered list
             setTimeout(function(){
-              parent.querySelector("#progress").style.cssText = "display:table-row;animation: fadeIn 0.8s ease-in-out forwards;";
+              parent.querySelector("#progress").style.cssText = "display:table-row;animation: fadeIn 0.5s ease-in-out forwards;";
             }, 1300);
 
             //delay for progress bar transition effect
@@ -59,7 +59,7 @@ var clickCount = 0;
                 var lang = codeLevels[key];
                 progress[index].style.cssText= "width: " + lang + "; transition: width 0.4s linear;";
               });
-            }, 2200);
+            }, 1800);
           }
 
           slideOut(index, boxes);
@@ -87,59 +87,32 @@ var clickCount = 0;
     });
   });
 
-  function scrollAboutMe(){
-    console.log(test);
-  }
-
   function slideIn(i, boxes) {
-    if(i === 0){
-      boxes[i+1].style.cssText = "display:block;opacity:0";
-      boxes[i+2].style.cssText = "display:block;opacity:0";
-      setTimeout(function(){
-        boxes[i+1].style.cssText = "animation:slideRightIn 0.75s ease-in-out forwards;";
-        boxes[i+2].style.cssText = "animation:slideLeftIn 0.75s ease-in-out forwards;";
-      },100)
-    } else if(i == 1){
-      boxes[i+1].style.cssText = "display:block;opacity:0";
-      boxes[i-1].style.cssText = "display:block;opacity:0";
-      setTimeout(function(){
-        boxes[i+1].style.cssText = "animation:slideRightIn 0.75s ease-in-out forwards;";
-        boxes[i-1].style.cssText = "animation:slideLeftIn 0.75s ease-in-out forwards;";
-      }, 100);
-    } else if(i == 2){
-      boxes[i-2].style.cssText = "display:block;opacity:0";
-      boxes[i-1].style.cssText = "display:block;opacity:0";
-      setTimeout(function(){
-        boxes[i-2].style.cssText = "animation:slideRightIn 0.75s ease-in-out forwards;";
-        boxes[i-1].style.cssText = "animation:slideLeftIn 0.75s ease-in-out forwards;";
-      }, 100);
-    }
+    boxes.forEach(function(box, index){
+      if(index !== i){
+        boxes[index].style.cssText = "display:block;opacity:0";
+        setTimeout(function(){
+          boxes[index].style.cssText = "animation:slideRightIn 0.75s ease-in-out forwards;";
+        },100)
+      }
+    });
   }
 
   function slideOut(i, boxes){
-    if(i === 0){
-      setTimeout(function(){
-        boxes[i+1].style.cssText = "display:none;";
-        boxes[i+2].style.cssText = "display:none;";
-      }, 700);
-      boxes[i+1].style.cssText = "animation:slideLeft 0.75s ease-in-out forwards;";
-      boxes[i+2].style.cssText = "animation:slideRight 0.75s ease-in-out forwards;";
-    } else if(i == 1){
-      setTimeout(function(){
-        boxes[i+1].style.cssText = "display:none;";
-        boxes[i-1].style.cssText = "display:none;";
-      }, 700);
-      boxes[i+1].style.cssText = "animation:slideLeft 0.75s ease-in-out forwards;";
-      boxes[i-1].style.cssText = "animation:slideRight 0.75s ease-in-out forwards;";
-    } else if(i == 2){
-      setTimeout(function(){
-        boxes[i-2].style.cssText = "display:none;";
-        boxes[i-1].style.cssText = "display:none;";
-      }, 700);
-      boxes[i-2].style.cssText = "animation:slideLeft 0.75s ease-in-out forwards;";
-      boxes[i-1].style.cssText = "animation:slideRight 0.75s ease-in-out forwards;";
-    }
+    boxes.forEach(function(box, index){
+      if(index !== i){
+        setTimeout(function(){
+          boxes[index].style.cssText = "display:none;";
+        }, 700);
 
+        if(index%2 === 0){
+          boxes[index].style.cssText = "animation:slideLeft 0.75s ease-in-out forwards;";
+        } else {
+          boxes[index].style.cssText = "animation:slideRight 0.75s ease-in-out forwards;";
+        }
+
+      }
+    });
   }
 
   //dynamically changes bottom height depending on size of window
