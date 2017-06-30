@@ -5,7 +5,6 @@
       scrollTop: 0
     }, 100);
   });
-  alert("TEST");
   console.log("TEEEESSSSSSSSSSSTTTT");
   codeLevels = {
     "Python": "85%",
