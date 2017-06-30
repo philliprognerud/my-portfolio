@@ -119,7 +119,13 @@ var clickCount = 0;
   window.onresize = function(event) {
     var containerOffset =   document.querySelector(".container").getBoundingClientRect().top;
     var height = window.innerHeight - containerOffset - $(".picBorder").height() - 30;
-    $(".bottom").css({"height": height});
+    var minHeight = 0
+    $(".box").each(function(){
+      minHeight += $(this).outerHeight(true);
+    });
+    if(height > minHeight){
+      $(".bottom").css({"height": height});
+    }
   };
 
   //fades out the body when scrolling up.
