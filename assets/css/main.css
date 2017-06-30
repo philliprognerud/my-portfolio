@@ -549,7 +549,8 @@ ul#progress li:first-of-type {
 }
 /* line 13, ../compass/scss/partials/_links.scss */
 .links #limheight {
-  display: table-cell;
+  list-style-type: none;
+  display: inherit;
   width: 100%;
   color: #181818 !important;
   padding-left: 0;
@@ -559,17 +560,17 @@ ul#progress li:first-of-type {
   -moz-column-count: 3;
   column-count: 3;
 }
-/* line 23, ../compass/scss/partials/_links.scss */
+/* line 24, ../compass/scss/partials/_links.scss */
 .links #limheight li {
   display: inline-block;
 }
-/* line 26, ../compass/scss/partials/_links.scss */
+/* line 27, ../compass/scss/partials/_links.scss */
 .links #limheight li:hover {
   color: hotpink;
 }
-/* line 30, ../compass/scss/partials/_links.scss */
+/* line 31, ../compass/scss/partials/_links.scss */
 .links #limheight li a {
-  color: #181818;
+  color: #181818 !important;
 }
 
 /* line 3, ../compass/scss/main.scss */

@@ -11,7 +11,8 @@
   }
 
   #limheight{
-    display: table-cell;
+    list-style-type: none;
+    display: inherit;
     width: 100%;
     color: #181818 !important;
     padding-left: 0;
@@ -28,7 +29,7 @@
       }
 
       a{
-        color: #181818;
+        color: #181818 !important;
       }
     }
 
