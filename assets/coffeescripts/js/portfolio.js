@@ -8,11 +8,13 @@
 
   codeLevels = {
     "Python": "85%",
-    "Javascript": "70%",
-    "Java": "50%",
-    "C": "45%",
-    "PHP": "20%",
-    "HTML+CSS": "90%"
+    "Javascript": "90%",
+    "Java": "75%",
+    "C": "50%",
+    "C++": "70%",
+    "PHP": "30%",
+    "HTML+CSS": "90%",
+    "Scala": "30%"
   }
 
 //setting page back to defaults
@@ -34,7 +36,7 @@ var clickCount = 0;
     boxes.forEach(function(box, index){
       if(parent.innerText === box.innerText){
         if(clickCount%2 === 0){
-          parent.style.cssText= "height:400px;transition: height 0.2s linear 0.8s;";
+          parent.style.cssText= "height:500px;transition: height 0.2s linear 0.8s;";
           setTimeout(function(){
             parent.querySelector(".text").style.cssText = "display: inline-block;animation: fadeIn 0.8s linear;";
             parent.querySelector("span").classList.remove("fa-expand");

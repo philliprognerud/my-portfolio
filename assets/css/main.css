@@ -2,10 +2,10 @@
 .profilePic {
   display: inline-block;
   float: left;
-  background-image: url('../images/profile-pic.jpg?1498031840');
-  background-size: contain;
-  width: 132px;
-  height: 132px;
+  background-image: url('../images/profile-pic.jpg?1504595220');
+  background-size: cover;
+  width: 126.24px;
+  height: 118.08px;
   border-radius: 50%;
   opacity: 0;
   animation: slideDown 1.2s ease-in-out forwards;
@@ -16,11 +16,12 @@
 /* line 18, ../compass/scss/partials/_profilePic.scss */
 .picBorder {
   margin: 0 auto;
-  width: 132px;
-  height: 132px;
+  width: 126.24px;
+  height: 118.08px;
   border-radius: 50%;
   box-shadow: 0px 0px 10px;
   animation: colorchange-shadow 15s infinite linear alternate;
+  transform: scale(1.06);
 }
 
 /* line 3, ../compass/scss/partials/_profileName.scss */
