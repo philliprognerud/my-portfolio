@@ -14,7 +14,7 @@
     "C++": "70%",
     "PHP": "30%",
     "HTML+CSS": "90%",
-    "Scala": "30%"
+    "Scala": "40%"
   }
 
 //setting page back to defaults
